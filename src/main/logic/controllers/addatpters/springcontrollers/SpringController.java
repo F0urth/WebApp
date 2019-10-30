@@ -10,6 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SpringController {
 
+
+
     @RequestMapping("check")
     public ModelAndView generateTable() {
         ModelAndView mav = new ModelAndView();
