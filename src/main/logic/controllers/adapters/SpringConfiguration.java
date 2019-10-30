@@ -3,6 +3,7 @@ package main.logic.controllers.adapters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -18,5 +19,10 @@ public class SpringConfiguration {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setSuffix(".jsp");
         return resolver;
+    }
+    @Bean
+    @Primary
+    public String mainUrl() {
+        return "http://api.nbp.pl/api/exchangerates/tables/A/?format=json";
     }
 }
