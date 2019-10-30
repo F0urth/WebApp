@@ -18,13 +18,15 @@ public class InitTableController {
     private ResponseParser parser;
 
     public InitTableController(String url) {
-
+        this.reader = new WebReader(url);
+        this.parser = new ResponseParser();
     }
 
     public ModelAndView createTable() {
         ModelAndView mav = new ModelAndView();
-
-
+        final ResponseParser.FullParseData fullParseData = parser.parsNBPTableAResponse(reader.read());
+        mav.addObject("result", fullParseData);
+        mav.setViewName("viewresults");
         return mav;
     }
 }

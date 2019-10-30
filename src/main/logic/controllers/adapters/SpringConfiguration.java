@@ -1,5 +1,6 @@
 package main.logic.controllers.adapters;
 
+import com.google.gson.JsonParser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -25,4 +26,5 @@ public class SpringConfiguration {
     public String mainUrl() {
         return "http://api.nbp.pl/api/exchangerates/tables/A/?format=json";
     }
+
 }
