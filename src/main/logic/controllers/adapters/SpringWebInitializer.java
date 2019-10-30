@@ -1,4 +1,4 @@
-package main.logic.controllers.addatpters;
+package main.logic.controllers.adapters;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

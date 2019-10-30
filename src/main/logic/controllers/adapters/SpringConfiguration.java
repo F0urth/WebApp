@@ -1,4 +1,4 @@
-package main.logic.controllers.addatpters;
+package main.logic.controllers.adapters;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,12 +11,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan({"main.logic.controllers"})
+@ComponentScan({"main.logic.controllers.adapters"})
 public class SpringConfiguration {
     @Bean
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/pages/");
         resolver.setSuffix(".jsp");
         return resolver;
     }
