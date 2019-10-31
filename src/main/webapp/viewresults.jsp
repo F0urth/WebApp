@@ -26,26 +26,21 @@
         Table: <%= ((ResponseParser.FullParseData) request.getAttribute("result")).getTable() %>
     </h3>
     <h2>---TABLE---</h2>
-    <%!
-        String outputRow(Double mid, String currency, String code) {
-            return mid + " " + currency + " " + code;
-        }
-    %>
-    <%
-        List<ResponseParser.RatesParsData> result = ((ResponseParser.FullParseData) request.getAttribute("result")).getRates();
-        System.out.println("mid currency code");
-        for (ResponseParser.RatesParsData data : result) {
-            outputRow(data.getMid(), data.getCurrency(), data.getCode());
-        }
-    %>
-    <c:forEach items="${result.getRates()}" var="rate">
-        <tr>
-            <td>${rate.getMid()}</td>
-            <td>${rate.getCurrency()}</td>
-            <td>${rate.getCode()}</td>
-        </tr>
-    </c:forEach>
 
+    <table border="1">
+        <tr>
+            <th>Mid</th>
+            <th>Currency</th>
+            <th>Code</th>
+        </tr>
+        <c:forEach items="${result.getRates()}" var="rate">
+            <tr>
+                <td>${rate.getMid()}</td>
+                <td>${rate.getCurrency()}</td>
+                <td>${rate.getCode()}</td>
+            </tr>
+        </c:forEach>
+    </table>
     <h2>---END---</h2>
 </body>
 </html>
