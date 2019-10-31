@@ -18,11 +18,8 @@
 <body>
     <h2>---INFO---</h2>
     <h3>
-        <% System.out.println(); %>
         EffectiveDate: <%= ((ResponseParser.FullParseData) request.getAttribute("result")).getEffectiveDate() %>
-        <% System.out.println(); %>
         No: <%= ((ResponseParser.FullParseData) request.getAttribute("result")).getNo() %>
-        <% System.out.println(); %>
         Table: <%= ((ResponseParser.FullParseData) request.getAttribute("result")).getTable() %>
     </h3>
     <h2>---TABLE---</h2>
