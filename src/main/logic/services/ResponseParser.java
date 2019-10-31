@@ -16,11 +16,6 @@ import java.util.List;
 public class ResponseParser {
 
     private static final Logger logger = LoggerFactory.getLogger(ResponseParser.class);
-    private JsonParser parser;
-
-    public ResponseParser() {
-        this.parser = new JsonParser();
-    }
 
     public FullParseData parsNBPTableAResponse(String json) {
         String table = "";
@@ -28,7 +23,7 @@ public class ResponseParser {
         String effectiveDate = "";
         logger.info("Parse NBP Response");
         List<RatesParsData> ratesParsData = new ArrayList<>();
-        JsonElement parse = this.parser.parse(json);
+        JsonElement parse = JsonParser.parseString(json);
         JsonArray jArray = (JsonArray) parse;
         for (JsonElement jsonElement : jArray) {
             if (jsonElement.isJsonArray()) {
